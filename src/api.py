@@ -1,4 +1,13 @@
 from services.document_service import process_document
+from services.job_service import process_input
+from services.llm_service import process_files
 
-DOC_PATH = "data/cv-template.pdf"
-print(process_document(DOC_PATH))
+DOC_PATH = "data/Mo Mofatteh CV 2025.pdf"
+cv_content = process_document(DOC_PATH)
+
+user_input = "https://www.linkedin.com/jobs/view/4192322117/?alternateChannel=search&eBP=CwEAAAGcXy6Xx8k7GkgBwqDpmHS8I_YKtU_aPgt_V_lAfgoFlSMaeSduZSXz9JCtY_ifjyFrVM3bC7ErkFLLeMpgII0ksUTENtBpwQTmbC5iL5fRyPrUtrciIPIxi16EyK4WbK7eNaeWjf8rJ73U1Q-RqAfEiyJ6jl6aRArnewGUZvp4CHDovQMyUa7aII5rgJ8ie-elEZ74vGrSMB1-bdlph8JDDbzy2SwOt9dlBpziliPCv-48hLjh3dJTJeou7nXXRr7YH6PvdWo241brArgPSQmx78Rw4Wni6EtfbWZMYEbezGYZo2Lyik9WIvd1xHuJKEScYtPdMoLpmmkJTJBaBbYeolwb5TcDc79oCLmts4L_7-nLxaeLs1DslC4gTnnAUWlZu2rdsj9l7tU-ta0bWB046JPcqPxgblS-hku9kVyaf9qulpyYSV5aJPrJzWmtrWOcrs6NFnYupO6Ec20JaThzrnwVtHIORZBthXRblFtpBtw0uOt6pEgTFgzBwr6cJBW6Zio&refId=IFLQIZADbgKGRKWNmc3vTQ%3D%3D&trackingId=nkEviWg4rvbH97ttpIGOAA%3D%3D"
+job_desc_content = process_input(user_input)
+
+
+print(process_files(cv_content, job_desc_content))
+

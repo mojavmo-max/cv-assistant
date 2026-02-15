@@ -2,3 +2,6 @@ pdfplumber
 python-docx
 openai
 dotenv
+requests
+bs4
+faiss-cpu
